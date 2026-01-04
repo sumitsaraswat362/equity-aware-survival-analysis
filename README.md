@@ -55,11 +55,13 @@ Discrimination
 	•	Concordance Index (C-index)
 	•	RSF outperforms Cox under external validation
 
-![Risk Stratification (Internal Validation)](results/Risk Stratification on Internal Validation (2014–2015))
+![Risk Stratification (Internal Validation)](results/risk_stratification_internal.png)
 
 Calibration
 	•	Time-dependent Brier Scores (6–60 months)
 	•	Demonstrates strong probabilistic reliability at clinically meaningful horizons
+
+![Risk Stratification (External Validation)](results/risk_stratification_external.png)
 
 Importantly, performance metrics are treated as starting points, not final conclusions.
 
@@ -71,6 +73,8 @@ Global metrics frequently obscure subgroup failures. To address this, performanc
 	•	Stratified C-index computation
 	•	Bootstrap confidence intervals
 	•	Direct comparison across demographic groups
+
+![Risk Stratification (External Validation)](results/fairness_by_race.png)
 
 This audit reveals non-trivial performance decay in underrepresented subgroups, highlighting limitations of models trained on demographically imbalanced registries.
 
