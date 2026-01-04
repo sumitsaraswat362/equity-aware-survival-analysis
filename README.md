@@ -55,6 +55,8 @@ Discrimination
 	•	Concordance Index (C-index)
 	•	RSF outperforms Cox under external validation
 
+![Risk Stratification (Internal Validation)](results/Risk Stratification on Internal Validation (2014–2015))
+
 Calibration
 	•	Time-dependent Brier Scores (6–60 months)
 	•	Demonstrates strong probabilistic reliability at clinically meaningful horizons
