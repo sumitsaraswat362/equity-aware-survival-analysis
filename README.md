@@ -65,6 +65,21 @@ Calibration
 
 Importantly, performance metrics are treated as starting points, not final conclusions.
 
+# Quantitative Summary of Core Results
+
+Under strict temporal external validation (2016–2018):
+
+• Random Survival Forest (RSF): C-index = 0.746  
+• Cox Proportional Hazards: C-index = 0.733  
+• 5-year Brier Score (RSF): 0.089  
+
+Despite strong global performance, failure-mode analysis revealed:
+
+• Global false-negative rate: 0.0099%  
+• False-negative rate within predicted Low-Risk group: 0.339%  
+
+These results demonstrate that clinically consequential errors persist even when standard performance metrics indicate high reliability.
+
 ⸻
 
 # Algorithmic Fairness Audit
