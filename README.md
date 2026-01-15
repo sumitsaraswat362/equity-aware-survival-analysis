@@ -106,7 +106,24 @@ Although rare, these errors are clinically catastrophic, underscoring the danger
 
 ⸻
 
-# Biological Interpretation & Hypothesis Generation
+# Biological Interpretation of Model Failures
+
+Failure cases were not treated as purely statistical artifacts. 
+Patients misclassified as low-risk despite early mortality frequently presented with small primary tumors, a pattern that is clinically consistent with biologically aggressive subtypes rather than measurement noise.
+
+Possible biological explanations include:
+• High-grade or poorly differentiated tumors with rapid proliferation
+• Molecular subtypes such as Triple-Negative or HER2-positive disease
+• Elevated proliferative indices (e.g., Ki-67) not captured in registry data
+• Early metastatic potential independent of primary tumor size
+
+These findings underscore a structural limitation of registry-based survival modeling: clinically decisive biological mechanisms are often unobserved. Tumor size, while dominant in population-level models, is an incomplete proxy for aggressiveness.
+
+This gap motivates future integration of molecular and genomic features to prevent systematic underestimation of risk in biologically high-grade disease.
+
+⸻
+
+# Hypothesis Generation for Experimental Validation
 
 The concentration of false negatives among patients with small tumors suggests a limitation of morphology-driven risk modeling. Tumor size alone may fail to capture underlying biological aggressiveness, which is often driven by molecular and proliferative factors absent from registry data.
 
@@ -122,6 +139,23 @@ To investigate this hypothesis, future work should integrate experimental valida
 	•	Comparative analysis of signaling pathway activation in false-negative cases
 
 Such experiments would directly test whether computational failure modes align with biological aggressiveness rather than modeling artifacts.
+
+⸻
+
+# Immediate Experimental Next Step
+
+As an immediate next step, I would prioritize retrospective Ki-67 stratification within the false-negative cohort, comparing proliferative indices between correctly classified low-risk patients and early-mortality false negatives. A statistically significant elevation would directly validate the hypothesis that registry-invisible proliferative biology drives systematic risk underestimation.
+
+⸻
+
+# Experimental Context & Current Wet-Lab Engagement
+
+In parallel with this computational work, I am currently engaged in wet-lab research within a university biological laboratory environment. My ongoing laboratory exposure informs the biological framing of this project, particularly in interpreting model failures through mechanisms such as proliferation dynamics and molecular aggressiveness.
+
+This dual engagement reflects an intentional effort to bridge computational modeling with experimental reasoning, rather than treating machine learning as an abstract or purely analytical exercise.
+
+This experience has shaped my understanding of experimental constraints, biological variability, and the gap between population-level models and single-sample laboratory observations.
+
 
 ⸻
 
@@ -157,6 +191,31 @@ Models optimized for population-level performance can still systematically under
 # Research Trajectory
 
 This project represents an initial step toward integrating machine learning with mechanistic oncology. The long-term research goal is to develop survival models that are not only predictive, but biologically interpretable and experimentally verifiable, enabling safer clinical deployment through hybrid computational–experimental workflows.
+
+Future work will focus on:
+• Incorporating molecular and genomic features
+• Studying failure modes through experimental validation
+• Developing uncertainty-aware models aligned with clinical safety
+
+This trajectory prioritizes environments that emphasize mentored, hypothesis-driven research at the interface of computation and experimental biology, where model failure analysis can directly inform laboratory investigation.
+
+⸻
+
+# What This Model Is Not
+
+This model is not a clinical decision-making system.
+It is not intended to guide treatment selection or patient management.
+It does not infer causality or replace molecular diagnostics.
+
+Its purpose is to identify structural limitations, subgroup vulnerabilities, and failure modes in survival modeling, thereby informing safer and more biologically grounded future research.
+
+⸻
+
+# Scope of Technical Competence
+
+This work reflects strengths in survival modeling, statistical auditing, and biological hypothesis generation. It does not claim expertise in molecular experimentation, genomic assay design, or causal inference.
+
+The intent is to contribute computational insight that guides experimental inquiry, while learning domain-specific laboratory techniques under expert supervision.
 
 ⸻
 
