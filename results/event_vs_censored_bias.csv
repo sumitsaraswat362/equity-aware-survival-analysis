@@ -1,0 +1,7 @@
+Variable,Test,p-value
+Tumor Size,Mann–Whitney U,0.0
+Age_Group,Chi-square,0.0
+Race,Chi-square,7.210523375857037e-131
+AJCC_Stage,Chi-square,0.0
+Grade,Chi-square,0.0
+Marital_Status,Chi-square,0.0
