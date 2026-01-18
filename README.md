@@ -82,6 +82,33 @@ These results demonstrate that clinically consequential errors persist even when
 
 ⸻
 
+# Results Inventory & Reproducibility
+
+All figures and tables referenced in the manuscript are generated programmatically and stored in the `results/` directory.
+
+## Core Performance & Calibration
+- `risk_stratification_internal.png` — Internal validation risk separation
+- `risk_stratification_external.png` — Temporal external validation risk separation
+- `brier_score_over_time.png` — Time-dependent calibration (6–60 months)
+
+## Fairness & Equity Audits
+- `fairness_by_race.png` — Stratified C-index by race
+- `race_equity_summary.csv` — Quantitative subgroup performance summary
+- `cox_cindex_by_race.csv` — Cox baseline subgroup comparison
+- `age_equity_summary.csv` — Age-stratified performance audit
+
+## Survival & Bias Diagnostics
+- `km_by_race.png` — Kaplan–Meier survival by race
+- `km_by_age.png` — Kaplan–Meier survival by age
+- `event_vs_censored_bias.csv` — Event/censoring distribution analysis
+
+## Cohort Transparency
+- `table1_cohort_characteristics.csv` — Baseline cohort characteristics (Table 1)
+
+All results are generated from deterministic scripts to ensure reproducibility.
+
+⸻
+
 # Algorithmic Fairness Audit
 
 Global metrics frequently obscure subgroup failures. To address this, performance is stratified by race:
@@ -185,7 +212,7 @@ This is a research prototype, not a deployable clinical tool.
 
 ⸻
 
-# Key Results
+# Key Takeaways
 	•	RSF demonstrates superior discrimination over Cox (C-index: 0.746 vs 0.733)
 	•	Strong 5-year calibration (Brier Score: 0.089)
 	•	Significant subgroup performance disparities detected
@@ -231,6 +258,22 @@ Its purpose is to identify structural limitations, subgroup vulnerabilities, and
 This work reflects strengths in survival modeling, statistical auditing, and biological hypothesis generation. It does not claim expertise in molecular experimentation, genomic assay design, or causal inference.
 
 The intent is to contribute computational insight that guides experimental inquiry, while learning domain-specific laboratory techniques under expert supervision.
+
+⸻
+
+# Reproducibility
+
+All analyses were conducted using Python-based survival modeling pipelines.
+
+Key dependencies include:
+- scikit-survival
+- lifelines
+- scikit-learn
+- pandas
+- numpy
+- matplotlib
+
+Scripts used to generate all figures and tables are version-controlled to ensure exact replication of reported results.
 
 ⸻
 
