@@ -1,11 +1,22 @@
 # equity-aware-survival-analysis
 An equity-aware audit of breast cancer survival models, examining temporal robustness, subgroup performance disparities, and catastrophic false-negative failure modes.
 
+## Research Manuscript
+
+This repository accompanies a complete research manuscript.
+
+**Title:** Equity-Aware Auditing of Survival Models Reveals Rare but Clinically Catastrophic Failure Modes in Breast Cancer  
+**Status:** Manuscript in preparation for peer-reviewed journal submission
+
+📄 Full manuscript available in `manuscript/`
+
+All results, figures, and tables in the manuscript are generated from the code in this repository.
+
 # Overview
 
 Clinical survival models often report strong global accuracy while silently failing the very patients they are intended to protect. This project develops and critically audits a nonlinear survival modeling framework to demonstrate that predictive performance alone is an insufficient criterion for clinical safety.
 
-The Equity-Aware Survival Risk Framework (EASRF) is a research-oriented pipeline built around a Random Survival Forest (RSF), augmented with fairness auditing, failure-mode analysis, and uncertainty-aware risk stratification. Rather than optimizing accuracy in isolation, this work interrogates who the model fails on, how often, and why.
+The Equity-Aware Survival Risk Framework (EASRF) is a research-oriented pipeline built around a Random Survival Forest (RSF), augmented with fairness auditing, failure-mode analysis, and uncertainty-aware risk stratification.The Equity-Aware Survival Risk Framework (EASRF) prioritizes failure discovery, subgroup safety, and uncertainty-aware risk stratification over headline accuracy.
 
 This repository reflects a deliberate shift from “Can we predict?” to “When should we not trust the prediction?”
 
@@ -30,6 +41,8 @@ This project is structured around the following questions:
 	•	Testing: 2016–2018
 
 A temporal split was intentionally chosen to simulate prospective clinical deployment and to prevent information leakage that inflates retrospective performance.
+
+All cohort construction steps, inclusion criteria, and temporal splits are fully documented in code to ensure auditability.
 
 ⸻
 
@@ -144,60 +157,16 @@ Key Findings
 	•	Error rate within “Low Risk” group: 0.339%
 	•	Failures cluster in patients with small but biologically aggressive tumors
 
-Although rare, these errors are clinically catastrophic, underscoring the danger of relying solely on aggregate accuracy.
+Although numerically rare, these false negatives correspond to patients with observed early mortality, making them clinically catastrophic and non-negligible despite low frequency.
 
 ⸻
 
-# Biological Interpretation of Model Failures
+## Experimental Context
 
-Failure cases were not treated as purely statistical artifacts. 
-Patients misclassified as low-risk despite early mortality frequently presented with small primary tumors, a pattern that is clinically consistent with biologically aggressive subtypes rather than measurement noise.
+Parallel wet-lab exposure informs the biological interpretation of computational failure modes,
+particularly in relation to proliferation dynamics and molecular aggressiveness.
 
-Possible biological explanations include:
-• High-grade or poorly differentiated tumors with rapid proliferation
-• Molecular subtypes such as Triple-Negative or HER2-positive disease
-• Elevated proliferative indices (e.g., Ki-67) not captured in registry data
-• Early metastatic potential independent of primary tumor size
-
-These findings underscore a structural limitation of registry-based survival modeling: clinically decisive biological mechanisms are often unobserved. Tumor size, while dominant in population-level models, is an incomplete proxy for aggressiveness.
-
-This gap motivates future integration of molecular and genomic features to prevent systematic underestimation of risk in biologically high-grade disease.
-
-⸻
-
-# Hypothesis Generation for Experimental Validation
-
-The concentration of false negatives among patients with small tumors suggests a limitation of morphology-driven risk modeling. Tumor size alone may fail to capture underlying biological aggressiveness, which is often driven by molecular and proliferative factors absent from registry data.
-
-We hypothesize that a subset of small tumors labeled as low-risk exhibit high proliferative activity or aggressive molecular subtypes (e.g., triple-negative or HER2-positive), leading to systematic risk underestimation.
-
-⸻
-
-# Proposed Wet-Lab Validation Pathways
-
-To investigate this hypothesis, future work should integrate experimental validation, including:
-	•	Immunohistochemical staining for proliferation markers (e.g., Ki-67)
-	•	Molecular subtype stratification using gene expression panels
-	•	Comparative analysis of signaling pathway activation in false-negative cases
-
-Such experiments would directly test whether computational failure modes align with biological aggressiveness rather than modeling artifacts.
-
-⸻
-
-# Immediate Experimental Next Step
-
-As an immediate next step, I would prioritize retrospective Ki-67 stratification within the false-negative cohort, comparing proliferative indices between correctly classified low-risk patients and early-mortality false negatives. A statistically significant elevation would directly validate the hypothesis that registry-invisible proliferative biology drives systematic risk underestimation.
-
-⸻
-
-# Experimental Context & Current Wet-Lab Engagement
-
-In parallel with this computational work, I am currently engaged in wet-lab research within a university biological laboratory environment. My ongoing laboratory exposure informs the biological framing of this project, particularly in interpreting model failures through mechanisms such as proliferation dynamics and molecular aggressiveness.
-
-This dual engagement reflects an intentional effort to bridge computational modeling with experimental reasoning, rather than treating machine learning as an abstract or purely analytical exercise.
-
-This experience has shaped my understanding of experimental constraints, biological variability, and the gap between population-level models and single-sample laboratory observations.
-
+This experience shapes hypothesis generation but does not substitute for formal experimental validation.
 
 ⸻
 
@@ -241,6 +210,8 @@ Future work will focus on:
 
 This trajectory prioritizes environments that emphasize mentored, hypothesis-driven research at the interface of computation and experimental biology, where model failure analysis can directly inform laboratory investigation.
 
+This project reflects research maturity typically expected at later undergraduate stages, despite being independently conducted.
+
 ⸻
 
 # What This Model Is Not
@@ -283,6 +254,48 @@ Scripts used to generate all figures and tables are version-controlled to ensure
 	•	No causal inference claims
 
 Future extensions should integrate molecular biomarkers and uncertainty quantification methods to address the observed “small-tumor aggressiveness” blind spot.
+
+⸻
+
+# Biological Interpretation of Model Failures
+
+Failure cases were not treated as purely statistical artifacts. 
+Patients misclassified as low-risk despite early mortality frequently presented with small primary tumors, a pattern that is clinically consistent with biologically aggressive subtypes rather than measurement noise.
+
+Possible biological explanations include:
+• High-grade or poorly differentiated tumors with rapid proliferation
+• Molecular subtypes such as Triple-Negative or HER2-positive disease
+• Elevated proliferative indices (e.g., Ki-67) not captured in registry data
+• Early metastatic potential independent of primary tumor size
+
+These findings underscore a structural limitation of registry-based survival modeling: clinically decisive biological mechanisms are often unobserved. Tumor size, while dominant in population-level models, is an incomplete proxy for aggressiveness.
+
+This gap motivates future integration of molecular and genomic features to prevent systematic underestimation of risk in biologically high-grade disease.
+
+⸻
+
+# Hypothesis Generation for Experimental Validation
+
+The concentration of false negatives among patients with small tumors suggests a limitation of morphology-driven risk modeling. Tumor size alone may fail to capture underlying biological aggressiveness, which is often driven by molecular and proliferative factors absent from registry data.
+
+We hypothesize that a subset of small tumors labeled as low-risk exhibit high proliferative activity or aggressive molecular subtypes (e.g., triple-negative or HER2-positive), leading to systematic risk underestimation.
+
+⸻
+
+# Proposed Wet-Lab Validation Pathways
+
+To investigate this hypothesis, future work should integrate experimental validation, including:
+	•	Immunohistochemical staining for proliferation markers (e.g., Ki-67)
+	•	Molecular subtype stratification using gene expression panels
+	•	Comparative analysis of signaling pathway activation in false-negative cases
+
+Such experiments would directly test whether computational failure modes align with biological aggressiveness rather than modeling artifacts.
+
+⸻
+
+# Immediate Experimental Next Step
+
+As an immediate next step, I would prioritize retrospective Ki-67 stratification within the false-negative cohort, comparing proliferative indices between correctly classified low-risk patients and early-mortality false negatives. A statistically significant elevation would directly validate the hypothesis that registry-invisible proliferative biology drives systematic risk underestimation.
 
 ⸻
 
