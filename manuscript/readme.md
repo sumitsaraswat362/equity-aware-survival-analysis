@@ -1,12 +1,16 @@
 ## Working Research Draft
 
-This directory contains a working research draft prepared as part of an independent undergraduate research project.
+This directory contains materials related to the research manuscript
+associated with this project.
 
-The document is intended to transparently document:
-- The equity-aware survival auditing framework
-- Subgroup-specific failure analysis methodology
-- Statistical and clinical interpretation of results
-- Known limitations and open research questions
+The full manuscript is currently under preparation for submission to a
+peer-reviewed journal and is not publicly shared at this stage.
 
-The draft has not been peer reviewed and is shared for reproducibility and methodological clarity.  
-It is currently under revision prior to any formal journal submission.
+A draft of the manuscript can be made available upon reasonable request.
+
+For inquiries, please contact:
+- sumit.saraswat_cs25@gla.ac.in
+- saraswatsumit070@gmail.com
+
+This repository focuses on the computational framework, analysis code,
+and reproducible experiments supporting the study.
