@@ -1,16 +1,24 @@
 # equity-aware-survival-analysis
 An equity-aware audit of breast cancer survival models, examining temporal robustness, subgroup performance disparities, and catastrophic false-negative failure modes.
 
-## Research Manuscript
+## Research Overview
 
-This repository accompanies a complete research manuscript.
+This repository contains the full computational pipeline and analysis code for an independent research project on equity-aware auditing of survival models in breast cancer.
 
-**Title:** Equity-Aware Auditing of Survival Models Reveals Rare but Clinically Catastrophic Failure Modes in Breast Cancer  
-**Status:** Manuscript in preparation for peer-reviewed journal submission
+Project Focus:
+Equity-Aware Auditing of Survival Models to identify rare but clinically consequential failure modes across patient subgroups.
 
-📄 Full manuscript available in `manuscript/`
+Scope:
+	•	Survival and risk modeling using large-scale clinical cohorts
+	•	Subgroup-stratified performance and calibration analysis
+	•	Identification of latent failure modes masked by aggregate metrics
+	•	Emphasis on clinical risk interpretation and model robustness
 
-All results, figures, and tables in the manuscript are generated from the code in this repository.
+All reported results, figures, and analyses are fully reproducible from the code in this repository.
+
+📄 Manuscript status: In preparation for submission to a peer-reviewed journal.
+📩 Manuscript available upon reasonable academic request
+(Contact: saraswatsumit070@gmail.com | sumit.saraswat_cs25@gla.ac.in)
 
 # Overview
 
