@@ -1,9 +1,12 @@
-## This directory contains the full research manuscript associated with this project.
+## Working Research Draft
 
-The manuscript describes:
+This directory contains a working research draft prepared as part of an independent undergraduate research project.
+
+The document is intended to transparently document:
 - The equity-aware survival auditing framework
-- Subgroup failure analysis methodology
-- Clinical risk interpretation
-- Limitations and future directions
+- Subgroup-specific failure analysis methodology
+- Statistical and clinical interpretation of results
+- Known limitations and open research questions
 
-Status: In preparation for peer-reviewed journal submission.
+The draft has not been peer reviewed and is shared for reproducibility and methodological clarity.  
+It is currently under revision prior to any formal journal submission.
