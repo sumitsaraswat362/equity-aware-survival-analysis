@@ -1,6 +1,18 @@
 # equity-aware-survival-analysis
 An equity-aware audit of breast cancer survival models, examining temporal robustness, subgroup performance disparities, and rare but clinically catastrophic failure modes.
 
+## Systems Architecture
+
+```mermaid
+graph TD
+    A[170,000 SEER Records] --> B{Temporal Filter}
+    B --> C[50,355 Analytic Cohort]
+    C --> D[Random Survival Forest Audit]
+    D --> E[Global Performance Metrics]
+    D --> F[Failure Mode Identification]
+    F --> G[Small-Tumor High-Risk Patients]
+    G --> H[Biological Hypothesis Generation]
+
 ## At a Glance
 - **Domain:** Computational Oncology / Survival Analysis  
 - **Data Source:** SEER breast cancer registry  
