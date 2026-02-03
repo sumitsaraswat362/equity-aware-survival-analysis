@@ -1,5 +1,45 @@
 # equity-aware-survival-analysis
-An equity-aware audit of breast cancer survival models, examining temporal robustness, subgroup performance disparities, and catastrophic false-negative failure modes.
+An equity-aware audit of breast cancer survival models, examining temporal robustness, subgroup performance disparities, and rare but clinically catastrophic failure modes.
+
+## At a Glance
+- **Domain:** Computational Oncology / Survival Analysis  
+- **Data Source:** SEER breast cancer registry  
+- **Population:** 170,000+ patients screened → 50,355 analyzed after inclusion criteria  
+- **Models:** Cox Proportional Hazards, Random Survival Forest  
+- **Validation:** Strict temporal split (2004–2015 train, 2016–2018 test)  
+- **Focus:** Subgroup safety, failure-mode discovery, reproducibility  
+- **Status:** Research project; manuscript in preparation  
+
+⸻
+
+## Table of Contents
+1. Research Overview  
+2. Research Questions  
+3. Dataset & Cohort Design  
+4. Modeling Approach  
+5. Performance Evaluation  
+6. Fairness & Failure Analysis  
+7. Biological Interpretation  
+8. Limitations & Future Work  
+9. Reproducibility & Ethics  
+
+⸻
+
+## Quick Orientation
+
+This repository contains a fully reproducible research pipeline for auditing equity and failure modes in breast cancer survival models.
+
+- Registry screened: ~170,000 SEER records  
+- Analytic cohort: 50,355 patients (post QC & temporal filtering)  
+- Primary models: Cox PH, Random Survival Forest  
+- Focus: subgroup safety, calibration, and rare false-negative failures  
+- Status: research prototype; not a clinical decision system
+
+Start here:
+- `01_equity_aware_survival_analysis.ipynb` — main analysis pipeline  
+- `results/` — all figures and tables (programmatically generated)
+
+⸻
 
 ## Research Overview
 
@@ -19,6 +59,8 @@ All reported results, figures, and analyses are fully reproducible from the code
 📄 Manuscript status: In preparation for submission to a peer-reviewed journal.
 📩 Manuscript available upon reasonable academic request
 (Contact: saraswatsumit070@gmail.com | sumit.saraswat_cs25@gla.ac.in)
+
+⸻
 
 # Overview
 
@@ -41,12 +83,12 @@ This project is structured around the following questions:
 ⸻
 
 # Dataset & Cohort Design
-	•	Source: SEER breast cancer registry
-	•	Cohort Size: 50,355 patients
+	•	Data Source: SEER breast cancer registry (population-scale registry; ~170,000 records screened)
+	•	Analytic Cohort: 50,355 patients meeting inclusion criteria after quality control, missingness filtering, and temporal eligibility constraints
 	•	Outcome: Overall survival
-	•	Validation Strategy: Strict temporal split
-	•	Training: 2004–2015
-	•	Testing: 2016–2018
+	•	Validation Strategy: Strict temporal external validation to simulate prospective clinical deployment
+	•	Training Period: 2004–2015
+	•	Testing Period: 2016–2018
 
 A temporal split was intentionally chosen to simulate prospective clinical deployment and to prevent information leakage that inflates retrospective performance.
 
