@@ -24,20 +24,13 @@ An equity-aware audit of breast cancer survival models, examining temporal robus
 9. Reproducibility & Ethics  
 
 ⸻
-
-## Quick Orientation
-
-This repository contains a fully reproducible research pipeline for auditing equity and failure modes in breast cancer survival models.
-
-- Registry screened: ~170,000 SEER records  
-- Analytic cohort: 50,355 patients (post QC & temporal filtering)  
-- Primary models: Cox PH, Random Survival Forest  
-- Focus: subgroup safety, calibration, and rare false-negative failures  
-- Status: research prototype; not a clinical decision system
+## Repository Structure
 
 Start here:
 - `01_equity_aware_survival_analysis.ipynb` — main analysis pipeline  
 - `results/` — all figures and tables (programmatically generated)
+
+All analyses are fully reproducible from source code.
 
 ⸻
 
